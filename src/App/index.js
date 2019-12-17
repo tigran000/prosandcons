@@ -4,7 +4,7 @@ import AppWrapper from "./AppWrapper";
 import Pros from "../components/Pros";
 import Cons from "../components/Cons";
 import showErrorPopUp from "../utils/showErrorPopUp";
-import fetchProsAndCons from "../services/fetchProsAndCons";
+import { fetchProsAndCons, putProsAndCons } from "../services";
 
 function App() {
   const [prosAndCons, setProsAndCons] = useState({});
@@ -26,7 +26,9 @@ function App() {
       const nextState = produce(prosAndCons, draftState => {
         draftState[type] = [...draftState[type], newItem];
       });
+
       setProsAndCons(nextState);
+      putProsAndCons(nextState);
     }
   }
 
@@ -35,6 +37,7 @@ function App() {
       draftState[type].splice(index, 1);
     });
     setProsAndCons(nextState);
+    putProsAndCons(nextState);
   }
 
   return (
