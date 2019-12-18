@@ -1,5 +1,7 @@
 A frontend for a "Pro’s & Con’s" application. The application has two modifiable lists (named "pros" and "cons"), in which the user can add and remove list items.
 
+LIVE URL: https://silly-raman-e7d473.netlify.com/
+
 getting the `groupId` needed in the request from the backend with the following request:
   GET https://avetiq-test.firebaseapp.com/group/tigran_harutyunyan
 
